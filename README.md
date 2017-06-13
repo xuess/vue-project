@@ -1,6 +1,6 @@
-# vue-haihu
+# vue
 
-> vue haihu project
+> vue-project
 
 ## Build Setup
 
