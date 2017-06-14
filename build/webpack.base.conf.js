@@ -2,15 +2,22 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+//var ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+
+//./src/module/**/+(main|app|index|cart|demo|list|share).js
+var entries = utils.getEntry('./src/master/**/*.js') // 获得入口js文件
+//entries.main = './src/main.js'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+console.log('----------entries--------\n',entries);
+
+
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
+  entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
