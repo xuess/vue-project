@@ -2,22 +2,15 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-//var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-
-//./src/module/**/+(main|app|index|cart|demo|list|share).js
-var entries = utils.getEntry('./src/master/**/*.js') // 获得入口js文件
-//entries.main = './src/main.js'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-console.log('----------entries--------\n',entries);
-
-
 module.exports = {
-  entry: entries,
+  entry: {
+    app: './src/main.js'
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -29,7 +22,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -47,7 +40,7 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
+        options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
@@ -55,7 +48,7 @@ module.exports = {
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
+        options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
