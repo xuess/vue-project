@@ -1,5 +1,6 @@
 var path = require('path')
 var config = require('../config')
+var glob = require('glob')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
@@ -68,4 +69,47 @@ exports.styleLoaders = function (options) {
     })
   }
   return output
+}
+
+
+
+exports.getEntry = function(globPath) {
+    var entries = {},
+        basename, tmp, pathname
+
+    glob.sync(globPath).forEach(function(entry) {
+        basename = path.basename(entry, path.extname(entry))
+        tmp = entry.split('/').splice(3)
+        tmp = tmp.slice(0, -1)
+        pathname = tmp.join('/') + '/' + basename // 正确输出js和html的路径
+        
+        //删除第一个/
+        if(pathname.indexOf('/') == 0){
+        		pathname = pathname.substring(1)
+        }
+        entries[pathname] = entry
+    })
+    return entries
+}
+
+exports.multipleEntries = function(webpackConfig, HtmlWebpackPlugin) {
+    // var entries = webpackConfig.entry
+    var projectName = !!config.build.projectName ? config.build.projectName : '**';
+	var entries = exports.getEntry('./src/' + projectName + '/**/*.html') // 获得入口文件
+	
+	
+	console.log('-------------entries------------start\n',entries,'\n------------------end-------------------');
+	
+    Object.keys(entries).map(function(id) {
+        var _conf = {
+    			template: entries[id],
+    			// template: "!!html-webpack-plugin/lib/loader.js!./templates/" + id + ".html",
+            filename: id + ".html",
+            inject: true, // js插入位置
+			//showErrors: true, //页面上打印 错误日志
+            chunks: [id],
+        }
+        // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
+        webpackConfig.plugins.push(new HtmlWebpackPlugin(_conf))
+    })
 }

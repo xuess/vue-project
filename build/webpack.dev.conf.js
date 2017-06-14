@@ -11,7 +11,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
-module.exports = merge(baseWebpackConfig, {
+var webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
@@ -25,11 +25,17 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
+//  new HtmlWebpackPlugin({
+//    filename: 'index.html',
+//    template: 'index.html',
+//    inject: true
+//  }),
     new FriendlyErrorsPlugin()
   ]
 })
+
+
+//生成html 模板
+utils.multipleEntries(webpackConfig, HtmlWebpackPlugin)
+
+module.exports = webpackConfig

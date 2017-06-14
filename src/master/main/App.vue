@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="../assets/logo.png">
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   margin-top: 60px;
 }
 body{
-	background-image: url(./assets/banner.jpg);
+	background-image: url(../assets/banner.jpg);
 	p{
 		text-align: center;
 	}

@@ -49,20 +49,22 @@ var webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: config.build.index,
-      template: 'index.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),
+    
+//  new HtmlWebpackPlugin({
+//    filename: config.build.index,
+//    template: 'index.html',
+//    inject: true,
+//    minify: {
+//      removeComments: true,
+//      collapseWhitespace: true,
+//      removeAttributeQuotes: true
+//      // more options:
+//      // https://github.com/kangax/html-minifier#options-quick-reference
+//    },
+//    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+//    chunksSortMode: 'dependency'
+//  }),
+
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -116,5 +118,10 @@ if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
+
+
+//生成html 模板
+utils.multipleEntries(webpackConfig, HtmlWebpackPlugin)
+
 
 module.exports = webpackConfig

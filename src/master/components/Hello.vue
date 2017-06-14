@@ -25,7 +25,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App@@!!'
     }
   }
 }
@@ -33,6 +33,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	
+	.hello{
+		font-size: 30px;
+	}
 h1, h2 {
   font-weight: normal;
 }
