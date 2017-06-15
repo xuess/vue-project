@@ -97,7 +97,6 @@ exports.multipleEntries = function(webpackConfig, HtmlWebpackPlugin) {
     var projectName = !!config.build.projectName ? config.build.projectName : '**';
 	var entries = exports.getEntry('./src/' + projectName + '/**/*.html') // 获得入口文件
 	
-	
 	console.log('-------------entries------------start\n',entries,'\n------------------end-------------------');
 	
     Object.keys(entries).map(function(id) {
@@ -107,7 +106,7 @@ exports.multipleEntries = function(webpackConfig, HtmlWebpackPlugin) {
             filename: id + ".html",
             inject: true, // js插入位置
 			//showErrors: true, //页面上打印 错误日志
-            chunks: [id],
+            chunks: [id,'manifest','vendor'],
         }
         // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
         webpackConfig.plugins.push(new HtmlWebpackPlugin(_conf))
