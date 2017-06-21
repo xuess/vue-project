@@ -1,12 +1,12 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 var yargs = require('yargs').argv
-var projectName = '';
-
-if(typeof yargs.pro_name !== 'undefined') {
-	projectName = yargs.pro_name
-}
-console.log('-----projectName--------start\n', projectName, '\n------projectName-------end');
+var projectName = 'master';
+//TODO 
+//if(typeof yargs.pro_name !== 'undefined') {
+//	projectName = yargs.pro_name
+//}
+//console.log('-----projectName--------start\n', projectName, '\n------projectName-------end');
 
 module.exports = {
 	build: {

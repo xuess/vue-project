@@ -1,0 +1,47 @@
+@charset "utf-8";
+// Variables
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+//
+// All variables need to be named as ${rule}-${element}-${modifier}
+//
+// Add !default so _custom.scss can override it
+
+//
+// Colors
+//
+$color-white: #fff !default;
+$color-gray: #909090 !default;
+$color-pink: #f53e7b !default;
+
+$color-text-primary: #333 !default;
+$color-text-muted: #666 !default;
+$color-text-weak: #999 !default;
+
+// background color
+$color-background: #f3f3f3 !default;
+$color-background-active: rgba(0, 0, 0, 0.1) !default;
+
+//
+// Spacing
+//
+$width-gap: px2rem(16) !default;
+$width-gap-double: px2rem(32) !default;
+$width-gap-half: px2rem(8) !default;
+
+//
+// Typography
+//
+$font-size-small: 85% !default;
+$font-size-sub-sup: 75% !default;
+
+$line-height: 1.5 !default;
+
+$font-family: PingFangSC-Light,Helvetica,"Droid Sans",Arial,sans-serif !default;
+
+//
+// Forms
+//
+// For buttons
+$border: px2rem(2) solid !default;
+$border-radius: px2rem(6) !default;

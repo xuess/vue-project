@@ -1,0 +1,62 @@
+// .text-left {
+//   text-align: left;
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+// .text-right {
+//   text-align: right;
+// }
+
+.flex-left,
+.flex-center,
+.flex-right,
+.flex-top,
+.flex-middle,
+.flex-bottom {
+    @include flex-container();
+}
+
+.flex-left {
+    justify-content: flex-start;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-top {
+    align-items: flex-start;
+}
+
+.flex-middle {
+    align-items: center;
+    align-content: center;
+}
+
+.flex-bottom {
+    align-items: flex-end;
+}
+
+//省略号
+.text-ellipsis {
+    display: -webkit-box;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+// 缩进
+.indent{
+    padding-left: .75em;
+    text-indent: -.75em;
+}

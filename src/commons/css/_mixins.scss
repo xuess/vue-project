@@ -1,0 +1,35 @@
+@mixin flex-container() {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin flex-width($percentage) {
+  flex-basis: $percentage;
+  max-width: $percentage;
+}
+
+//
+// buttons
+//
+@mixin btn() {
+  text-align: center;
+  border: $border;
+  border-radius: $border-radius;
+  -webkit-appearance: none;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+  zoom: 1;
+}
+
+@mixin btn-pink() {
+  color: $color-white;
+  border-color: $color-pink;
+  background-color: $color-pink;
+}
+
+@mixin btn-gray-trans() {
+  color: $color-text-muted;
+  border-color: $color-gray;
+  background-color: $color-white;
+}

@@ -1,0 +1,157 @@
+// Resets
+//
+// Global resets to common HTML elements.
+
+//
+// `html` and `body`
+//
+
+// Reset the box-sizing and word-break
+html {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  word-break: inherit;
+  outline: 0;
+}
+
+html {
+  overflow-y: scroll;
+  // Prevent adjustments of font size after orientation changes in IE and iOS.
+  text-size-adjust: 100%;
+  background-color: $color-background;
+  // Changes the default tap highlight in iOS.
+  -webkit-tap-highlight-color: $color-background-active;
+}
+
+body {
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $color-text-primary;
+}
+
+//
+// Typography
+//
+body,div,p
+,header,footer,menu,nav,section
+,dl,dt,dd,ul,ol,li
+,h1,h2,h3,h4,h5,h6
+,pre,code
+,form,fieldset,legend,input,textarea,button
+,table,th,td
+,article,aside,details,blockquote,figcaption,figure,hgroup,hr {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ins {
+  text-decoration: none;
+}
+
+small {
+  font-size: $font-size-small;
+}
+
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+sub,
+sup {
+  font-size: $font-size-sub-sup;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,img {
+  border: 0;
+}
+
+abbr,acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address,caption,cite,code,dfn,em,th,var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+//
+// Forms
+//
+input,select,textarea {
+  font-size: 100%;
+}
+
+input {
+  -webkit-appearance: none;
+  padding: px2rem(8 0 8 12);
+  border: 1px solid #ccc;
+  border-radius: px2rem(6);
+  background-color: #fff;
+}
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role="button"] {
+  cursor: pointer;
+}
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+[hidden] {
+  display: none;
+}

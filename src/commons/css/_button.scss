@@ -1,0 +1,13 @@
+%btn {
+  @include btn();
+}
+
+.btn-pink {
+  @extend %btn;
+  @include btn-pink();
+}
+
+.btn-gray-trans {
+  @extend %btn;
+  @include btn-gray-trans();
+}

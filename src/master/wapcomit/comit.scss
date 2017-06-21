@@ -1,0 +1,172 @@
+$base: 32;
+#CommentList {
+    margin-top: 20rem / $base;
+    padding: 0 16rem/$base;
+}
+
+#hotCommentList {
+    margin-top: 20rem / $base;
+    padding: 0 16rem/$base;
+}
+
+.comment_title {
+    padding: 10rem / $base 0;
+    color: #4A4A4A;
+}
+
+.comment_title span {
+    background: #F4436D;
+    border-radius: 5rem / $base;
+    color: #FFFFFF;
+    padding: 3rem / $base 6rem / $base;
+    margin-left: 6rem / $base;
+}
+
+.comment_list {
+    height: auto;
+    overflow: hidden;
+}
+
+.comment_list .comment_list_li {
+    overflow: hidden;
+    padding-top: 20rem / $base;
+}
+
+.comment_list .header-img {
+    float: left;
+    height: 32rem / $base;
+    width: 32rem / $base;
+}
+
+.comment_list .header-img img {
+    height: 30rem / $base;
+    width: 30rem / $base;
+    border-radius: 50%;
+    border: 1rem / $base #ddd solid;
+}
+
+.comment_list .cmt-main {
+    float: left;
+    width: 245rem/$base;
+    margin-left: 10rem/$base;
+    padding-bottom: 20rem / $base;
+    border-bottom: 1rem / $base solid #EEEEEE;
+}
+
+.comment_list .title {
+    height: 30rem / $base;
+    line-height: 30rem / $base;
+    padding-bottom: 6rem / $base;
+}
+
+.comment_list .nickname {
+    color: #666666;
+    float: left;
+}
+
+.comment_list .nickname img {
+    height: 16rem / $base;
+    width: 16rem / $base;
+    margin-left: 3rem / $base;
+    vertical-align: sub;
+}
+
+.comment_list .praise {
+    color: #333333;
+    float: right;
+    cursor: pointer;
+}
+
+.comment_list .praise img {
+    height: 12rem / $base;
+    width: 13rem / $base;
+    /*margin-right: 3rem / $base;*/
+    vertical-align: sub;
+}
+
+.comment_list .cont {
+    color: #333333;
+}
+
+.comment_list .cont .cmt_last {
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 10rem / $base 0;
+}
+
+.comment_list .cont .cmt_last_two {
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 10rem / $base 0;
+}
+
+.comment_list .cont .cmt_last:first-child {
+    padding: 0 0 10rem / $base 0;
+}
+
+.comment_list .cont .cmt_del {
+    text-align: center;
+    color: #999999;
+}
+
+.comment_list .cont .cmt_showmore {
+    background-color: #DDDDDD;
+    color: #333333;
+    cursor: pointer;
+    text-align: center;
+}
+
+.comment_list .cont li {
+    padding: 10rem / $base;
+    background: #F5F5F5;
+    line-height: 18rem / $base;
+    color: #666666;
+    text-align: justify;
+    margin-bottom: 1rem / $base;
+}
+
+.comment_list .cont li img {
+    width: 18rem / $base;
+    height: 18rem / $base;
+    border: none;
+    border: 0;
+    vertical-align: top;
+}
+
+.comment_list .time {
+    color: #999999;
+}
+
+.load_more {
+    display: none;
+    padding-top: 30rem / $base;
+    color: #F4436D;
+    text-align: center;
+    line-height: 20rem / $base;
+    cursor: pointer;
+}
+
+.load_more_loading {
+    padding-top: 20rem / $base;
+    text-align: center;
+}
+
+.load_more_loading img {
+    width: 20rem / $base;
+    height: 20rem / $base;
+    display: inline-block;
+}
+
+.no_comment p {
+    padding: 80rem / $base;
+    text-align: center;
+    color: #999999;
+}
+
+.hide {
+    display: none;
+}
+.cutline{
+    height: 10rem/$base;
+    background: #F5F5F5;
+}
