@@ -39,7 +39,7 @@
 //				this.$store.state.show = false;
 //			},
 			openPop() {
-				this.$store.state.show = true;
+				this.$store.commit('updateShow', true);
 			}
 		}
 	}

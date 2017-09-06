@@ -4,7 +4,7 @@
 		<backdrop></backdrop>
 		<div class="modal" id="downloadTipWx" style="display:block;" @touchmove="forbidSlide" v-show="isShow">
 			<div class="modal-header fs14">
-				<p>若已安装淘粉吧</p>
+				<p>若已安装淘粉吧----{{isAndroid ? 'aaa' : 'bbb'}}</p>
 				<p>请点击右上角用「<span id="browser" v-if="isAndroid">浏览器</span><span id="browser" v-else>Safari</span>」打开</p>
 			</div>
 			<div class="modal-body">
@@ -40,6 +40,7 @@
 		},
 		data() {
 			return {
+				isAndroid : true
 //				isShow: this.show
 				//title: this.title
 			}
@@ -58,7 +59,7 @@
 			},
 			// 点击关闭弹窗
 			close: function() {
-				this.$store.state.show = false;
+				this.$store.commit('updateShow', false);
 			},
 //			// 点击关闭弹窗
 //			isShowFinal: function() {

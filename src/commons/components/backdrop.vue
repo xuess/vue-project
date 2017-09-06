@@ -25,7 +25,7 @@
 			},
 			// 点击关闭弹窗
 			close: function() {
-				this.$store.state.show = false;
+				this.$store.commit('updateShow', false);
 			}
 		}
 	}
